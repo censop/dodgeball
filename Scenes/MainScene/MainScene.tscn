@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c06odyakrqjbt" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_3chlm"]
 [ext_resource type="Script" uid="uid://dws3amcbp25r0" path="res://Scenes/MainScene/MainScene.cs" id="1_mth80"]
+[ext_resource type="PackedScene" uid="uid://5lrj5p816cw7" path="res://Scenes/Ball/Ball.tscn" id="3_mth80"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6tmlw"]
 texture = ExtResource("1_3chlm")
@@ -171,11 +172,11 @@ texture = ExtResource("1_3chlm")
 [sub_resource type="TileSet" id="TileSet_3chlm"]
 sources/0 = SubResource("TileSetAtlasSource_6tmlw")
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_6tmlw"]
-a = Vector2(0, -20)
-b = Vector2(0, 340)
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3chlm"]
+a = Vector2(-1.0000068, -131)
+b = Vector2(2.1159649e-05, 506)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6tmlw"]
 a = Vector2(0, -20)
 b = Vector2(0, 340)
 
@@ -191,6 +192,16 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAGAAYAAAAAAAEAAAAGAAcAAAABAAAAAAAHAAY
 tile_set = SubResource("TileSet_3chlm")
 
 [node name="InvisibleWalls" type="Node2D" parent="." unique_id=1416835379]
+
+[node name="DownWall" type="StaticBody2D" parent="InvisibleWalls" unique_id=1625261959]
+position = Vector2(-244, -5)
+rotation = 1.5707964
+collision_layer = 2
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWalls/DownWall" unique_id=1515714070]
+position = Vector2(5.9999685, -715)
+shape = SubResource("SegmentShape2D_3chlm")
 
 [node name="LeftWall" type="StaticBody2D" parent="InvisibleWalls" unique_id=782012968]
 collision_layer = 2
@@ -208,12 +219,15 @@ collision_mask = 12
 position = Vector2(576, 8)
 shape = SubResource("SegmentShape2D_6tmlw")
 
-[node name="RightWall2" type="StaticBody2D" parent="InvisibleWalls" unique_id=765611825]
+[node name="UpWall" type="StaticBody2D" parent="InvisibleWalls" unique_id=765611825]
 position = Vector2(-244, -5)
 rotation = 1.5707964
 collision_layer = 2
 collision_mask = 12
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWalls/RightWall2" unique_id=64820249]
-position = Vector2(3.9999695, -716)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWalls/UpWall" unique_id=64820249]
+position = Vector2(341.99997, -711)
 shape = SubResource("SegmentShape2D_3chlm")
+
+[node name="Ball" parent="." unique_id=1358702151 instance=ExtResource("3_mth80")]
+position = Vector2(286, 139)

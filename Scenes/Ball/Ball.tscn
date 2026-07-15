@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://5lrj5p816cw7"]
+
+[ext_resource type="Texture2D" uid="uid://cey4kwyhqdjbp" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_SmallItems.png" id="1_rcvud"]
+[ext_resource type="Script" uid="uid://cnph1pgx4ix36" path="res://Scenes/Ball/Ball.cs" id="1_xo6r3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rcvud"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo6r3"]
+atlas = ExtResource("1_rcvud")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rcvud"]
+radius = 16.0
+
+[node name="Ball" type="RigidBody2D" unique_id=1358702151]
+collision_layer = 8
+collision_mask = 6
+physics_material_override = SubResource("PhysicsMaterial_rcvud")
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_xo6r3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2005152210]
+position = Vector2(0, -12)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_xo6r3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=151949934]
+shape = SubResource("CircleShape2D_rcvud")
