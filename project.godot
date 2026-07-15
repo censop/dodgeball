@@ -12,8 +12,13 @@ config_version=5
 
 config/name="DodgeBall"
 run/main_scene="uid://bh24wkoid0ogm"
-config/features=PackedStringArray("4.6", "Mobile")
+config/features=PackedStringArray("4.6", "C#", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalVariables="*uid://vy6jep1dojfs"
+SignalHub="*uid://bag6sxbsfd2p7"
 
 [dotnet]
 
