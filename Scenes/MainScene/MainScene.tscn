@@ -184,6 +184,7 @@ b = Vector2(0, 340)
 script = ExtResource("1_mth80")
 _speedTimer = NodePath("BallSpeedTimer")
 _spawnTimer = NodePath("BallSpawnTimer")
+_ballScene = ExtResource("3_mth80")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=668711464]
 anchor_mode = 0
@@ -202,7 +203,7 @@ collision_layer = 2
 collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWalls/DownWall" unique_id=1515714070]
-position = Vector2(5.9999685, -715)
+position = Vector2(9.999969, -716)
 shape = SubResource("SegmentShape2D_3chlm")
 
 [node name="LeftWall" type="StaticBody2D" parent="InvisibleWalls" unique_id=782012968]
@@ -210,7 +211,7 @@ collision_layer = 2
 collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWalls/LeftWall" unique_id=387357290]
-position = Vector2(0, 5)
+position = Vector2(5, 3)
 shape = SubResource("SegmentShape2D_6tmlw")
 
 [node name="RightWall" type="StaticBody2D" parent="InvisibleWalls" unique_id=434510533]
@@ -218,7 +219,7 @@ collision_layer = 2
 collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWalls/RightWall" unique_id=1716413268]
-position = Vector2(576, 8)
+position = Vector2(571, 11)
 shape = SubResource("SegmentShape2D_6tmlw")
 
 [node name="UpWall" type="StaticBody2D" parent="InvisibleWalls" unique_id=765611825]
@@ -228,14 +229,14 @@ collision_layer = 2
 collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWalls/UpWall" unique_id=64820249]
-position = Vector2(340.99997, -712)
+position = Vector2(337.99997, -714)
 shape = SubResource("SegmentShape2D_3chlm")
 
 [node name="Ball" parent="." unique_id=1358702151 instance=ExtResource("3_mth80")]
-position = Vector2(286, 139)
+position = Vector2(25, 160)
 
 [node name="BallSpeedTimer" type="Timer" parent="." unique_id=579844842]
 wait_time = 3.0
 
 [node name="BallSpawnTimer" type="Timer" parent="." unique_id=1032994506]
-wait_time = 10.0
+wait_time = 6.0

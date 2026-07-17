@@ -5,6 +5,7 @@ public partial class MainScene : Node2D
 {
 	[Export] Timer _speedTimer;
 	[Export] Timer _spawnTimer;
+	[Export] PackedScene _ballScene;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -28,6 +29,9 @@ public partial class MainScene : Node2D
 
     private void OnSpawnBall()
     {
+		Node2D ballInstance = _ballScene.Instantiate<Node2D>();
+		ballInstance.GlobalPosition = new Vector2(25f, 160f);
+		AddChild(ballInstance);
         
     }
 
