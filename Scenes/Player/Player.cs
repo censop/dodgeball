@@ -15,6 +15,6 @@ public partial class Player : CharacterBody2D
 		Vector2 inputDir = Input.GetVector("walk_left", "walk_right", "walk_up", "walk_down");
 		Velocity = inputDir * _walkSpeed;
 		MoveAndSlide();
-
 	}
+
 }
