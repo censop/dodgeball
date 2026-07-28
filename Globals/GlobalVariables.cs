@@ -5,6 +5,8 @@ public partial class GlobalVariables : Node
 {
     public static GlobalVariables Instance {private set; get;}
     public static float Speed = 200f;
+    public static int HighestMin = 0;
+    public static int HighestSec = 0;
 
     public override void _EnterTree()
     {

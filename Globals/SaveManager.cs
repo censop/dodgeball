@@ -15,6 +15,9 @@ public partial class SaveManager : Node
 
     public static void SaveGame(int highestMin, int highestSec)
     {
+        if(GlobalVariables.HighestMin > highestMin || 
+        (GlobalVariables.HighestMin < highestMin && GlobalVariables.HighestSec > highestSec)) return;
+
         SaveData data = new SaveData
         {
             HighScoreMinutes = highestMin,

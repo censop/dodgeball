@@ -3,6 +3,6 @@ using System;
 
 public class SaveData
 {
-    public int HighScoreMinutes;
-    public int HighScoreSeconds;
+    public int HighScoreMinutes {get; set;}
+    public int HighScoreSeconds {get; set;}
 }

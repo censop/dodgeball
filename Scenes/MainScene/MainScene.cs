@@ -10,6 +10,8 @@ public partial class MainScene : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		LoadGame();
+
 		GD.Randomize();
 
 		_speedTimer.Timeout += OnSpeedTimerTimeout;
@@ -18,6 +20,21 @@ public partial class MainScene : Node2D
 		_speedTimer.Start();
 		_spawnTimer.Start();
 	}
+
+    private void LoadGame()
+    {
+        SaveData data = SaveManager.LoadGame();
+
+		if (data != null)
+		{
+			GD.Print("data not null");
+			GlobalVariables.HighestMin = data.HighScoreMinutes;
+			GlobalVariables.HighestSec = data.HighScoreSeconds;
+		}
+
+		GD.Print($"Highest score: {GlobalVariables.HighestMin:00}:{GlobalVariables.HighestSec:00}");
+    }
+
 
     private void OnSpeedTimerTimeout()
     {
@@ -36,9 +53,4 @@ public partial class MainScene : Node2D
 		AddChild(ballInstance);
         
     }
-
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-	{
-	}
 }
