@@ -24,6 +24,10 @@ SignalHub="*uid://bag6sxbsfd2p7"
 
 project/assembly_name="DodgeBall"
 
+[editor]
+
+naming/scene_name_casing=1
+
 [layer_names]
 
 2d_physics/layer_1="background"
