@@ -1,3 +1,26 @@
 [gd_scene format=3 uid="uid://b56dmd3pygcu"]
 
+[ext_resource type="Script" uid="uid://djf1gr346pxuk" path="res://Scenes/Player/Player.cs" id="1_ft8w5"]
+[ext_resource type="Texture2D" uid="uid://wqqjoxcv1w5p" path="res://Assets/16x16 Idle-Sheet.png" id="1_s0eop"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft8w5"]
+atlas = ExtResource("1_s0eop")
+region = Rect2(4, 4, 12, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s0eop"]
+radius = 16.0
+height = 46.0
+
 [node name="Player" type="CharacterBody2D" unique_id=377326016]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_ft8w5")
+_walkSpeed = 200.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=186725782]
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_ft8w5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2115447416]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_s0eop")

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c06odyakrqjbt" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_3chlm"]
 [ext_resource type="Script" uid="uid://dws3amcbp25r0" path="res://Scenes/MainScene/MainScene.cs" id="1_mth80"]
 [ext_resource type="PackedScene" uid="uid://5lrj5p816cw7" path="res://Scenes/Ball/Ball.tscn" id="3_mth80"]
+[ext_resource type="PackedScene" uid="uid://b56dmd3pygcu" path="res://Scenes/Player/Player.tscn" id="4_fvwme"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6tmlw"]
 texture = ExtResource("1_3chlm")
@@ -244,3 +245,6 @@ wait_time = 3.0
 
 [node name="BallSpawnTimer" type="Timer" parent="." unique_id=1032994506]
 wait_time = 6.0
+
+[node name="Player" parent="." unique_id=377326016 instance=ExtResource("4_fvwme")]
+position = Vector2(142, 110)
