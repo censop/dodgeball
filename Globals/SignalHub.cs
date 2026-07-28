@@ -14,5 +14,4 @@ public partial class SignalHub : Node
     {
         Instance.EmitSignal(SignalName.OnGameOver);
     }
-
 }
